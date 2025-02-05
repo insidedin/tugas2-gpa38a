@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tugas2_gpa38a/dailyruby/home.dart';
+import 'package:tugas2_gpa38a/esporty/home.dart';
+import 'package:tugas2_gpa38a/flyaway/home.dart';
+import 'package:tugas2_gpa38a/mechanicare/home.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({super.key});
@@ -10,10 +14,10 @@ class Navigation extends StatefulWidget {
 class _NavigationState extends State<Navigation> {
   //inisialisasi page
   final List<Widget> page = [
+    const DailyHome(),
+    const SportHome(),
     const FlyHome(),
-    const Course(),
-    const History(),
-    const Profile(),
+    const CareHome(),
 
   ];
   int currentIndex = 0;
@@ -34,13 +38,13 @@ class _NavigationState extends State<Navigation> {
         backgroundColor: Colors.white,
         type: BottomNavigationBarType.fixed,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Daily Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.amp_stories_sharp), label: 'Course'),
+              icon: Icon(Icons.home), label: 'Sport Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.search), label: 'Search Course'),
+              icon: Icon(Icons.home), label: 'Fly Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle_rounded), label: 'Profile')
+              icon: Icon(Icons.home), label: 'Mechanic Home')
         ],
       ),
     );

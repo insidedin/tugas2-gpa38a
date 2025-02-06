@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tugas2_gpa38a/widgets/widget.dart';
 
 class FlyHome extends StatefulWidget {
   const FlyHome({super.key});
@@ -31,13 +32,13 @@ class _FlyHomeState extends State<FlyHome> {
                         Positioned(
                           bottom: 10.0,
                           left: 16.0,
-                          child: const Text(
-                            'Nikmati Perjalananmu\nBersama, FLY',
-                            style: TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
+                          child: textView(
+                            EdgeInsets.only(top: 20, left: 10),
+                            'Nikmati Perjalanan\nBersama FLY',
+                            TextAlign.left,
+                            Colors.white,
+                            FontWeight.bold,
+                            24,
                           ),
                         ),
                       ],
@@ -117,164 +118,6 @@ class _FlyHomeState extends State<FlyHome> {
               ],
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class FlightInfoRow extends StatelessWidget {
-  final IconData icon;
-  final String label;
-  final String value;
-
-  const FlightInfoRow({
-    Key? key,
-    required this.icon,
-    required this.label,
-    required this.value,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Icon(icon, color: Colors.blue),
-        const SizedBox(width: 8),
-        Text(
-          label,
-          style: const TextStyle(fontSize: 16, color: Colors.grey),
-        ),
-        const Spacer(),
-        Text(
-          value,
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-        ),
-      ],
-    );
-  }
-}
-
-class FlightDateInfo extends StatelessWidget {
-  final String label;
-  final String date;
-
-  const FlightDateInfo({
-    Key? key,
-    required this.label,
-    required this.date,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: const TextStyle(fontSize: 14, color: Colors.grey),
-        ),
-        const SizedBox(height: 4),
-        Text(
-          date,
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-        ),
-      ],
-    );
-  }
-}
-
-class UpcomingFlightCard extends StatelessWidget {
-  final String date;
-  final String departureTime;
-  final String arrivalTime;
-  final String from;
-  final String to;
-  final String fromCity;
-  final String toCity;
-
-  const UpcomingFlightCard({
-    Key? key,
-    required this.date,
-    required this.departureTime,
-    required this.arrivalTime,
-    required this.from,
-    required this.to,
-    required this.fromCity,
-    required this.toCity,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0)),
-      elevation: 4,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  date,
-                  style: const TextStyle(fontSize: 14, color: Colors.grey),
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                Text(
-                  departureTime,
-                  style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-                const Spacer(),
-                Icon(Icons.arrow_forward, color: Colors.blue),
-                const Spacer(),
-                Text(
-                  arrivalTime,
-                  style: const TextStyle(
-                      fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      from,
-                      style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      fromCity,
-                      style: const TextStyle(fontSize: 14, color: Colors.grey),
-                    ),
-                  ],
-                ),
-                const Spacer(),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      to,
-                      style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      toCity,
-                      style: const TextStyle(fontSize: 14, color: Colors.grey),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ],
         ),
       ),
     );
